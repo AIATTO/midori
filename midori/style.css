@@ -1,0 +1,546 @@
+/* リセットCSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Noto Serif JP', serif, 'Shippori Mincho', serif, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f8f8f8;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ヘッダー */
+header {
+  background-color: #1a4d2e; /* 深い緑色 */
+  color: #fff;
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+header h1 {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 2.5em;
+  margin: 0;
+  letter-spacing: 2px;
+}
+
+header nav ul {
+  list-style: none;
+}
+
+header nav ul li {
+  display: inline-block;
+  margin-left: 30px;
+}
+
+header nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 400;
+  padding: 5px 0;
+  position: relative;
+}
+
+header nav ul li a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #ffd700; /* アクセントカラー */
+  transition: width 0.3s ease;
+}
+
+header nav ul li a:hover::after {
+  width: 100%;
+}
+
+/* ヒーロースライダー */
+.hero-slider {
+  position: relative;
+  width: 100%;
+  height: 600px; /* スライダーの高さ */
+  overflow: hidden;
+}
+
+/* .slider-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s ease-in-out;
+} */
+
+.swiper-slide img {
+  height: auto;
+  width: 100%;
+}
+
+.swiper-slide-next,
+.swiper-slide-prev {
+  position: relative;
+}
+
+.swiper-slide-next::after,
+.swiper-slide-prev::after {
+  z-index: 10;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: 0.6;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  background-color: rgba(0, 0, 0);
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  font-size: 1.5em;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 20px !important;
+  color: #fff;
+}
+
+/* .slider-nav {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  padding: 0 20px;
+} */
+
+.slider-nav {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  padding: 0 20px;
+}
+
+.slider-nav button {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  font-size: 1.5em;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.slider-nav button:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* bodyに対してloadedクラスがない場合にアニメーションを適用 */
+body:not(.loaded) .hero-text {
+  animation: fadeInScale 1.5s ease-out; /* アニメーションを追加 */
+}
+
+.hero-text h2 {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 3.5em;
+  margin-bottom: 10px;
+  letter-spacing: 3px;
+}
+
+.hero-text p {
+  font-size: 1.5em;
+  line-height: 1.4;
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+/* 共通セクションスタイル */
+.section-padding {
+  padding: 80px 0;
+}
+
+.section-alt-bg {
+  background-color: #f0f5e7; /* 薄い緑色の背景 */
+}
+
+h2 {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 2.8em;
+  color: #1a4d2e; /* 深い緑色 */
+  text-align: center;
+  margin-bottom: 60px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background-color: #ffd700; /* アクセントカラー */
+}
+
+/* 深登吏について */
+.about-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1.1em;
+  line-height: 1.8;
+}
+
+.about-content p {
+  margin-bottom: 20px;
+}
+
+/* お品書き */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.menu-item {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menu-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.menu-item h3 {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 1.8em;
+  color: #1a4d2e;
+  margin-bottom: 15px;
+}
+
+.menu-item p {
+  font-size: 1em;
+  color: #555;
+}
+
+.menu-note {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 0.9em;
+  color: #777;
+}
+
+/* 亭主紹介 */
+.master-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.master-image {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 30px;
+  border: 5px solid #ffffff;
+}
+
+.master-info {
+  text-align: center;
+}
+
+.master-info h3 {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 2em;
+  color: #1a4d2e;
+  margin-bottom: 15px;
+}
+
+.master-info p {
+  font-size: 1.1em;
+  line-height: 1.8;
+  margin-bottom: 25px;
+  color: #444;
+}
+
+.social-links {
+  margin-top: 20px;
+}
+
+.social-links a {
+  display: inline-block;
+  background-color: #1a4d2e;
+  color: #fff;
+  padding: 12px 25px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1.1em;
+  margin: 0 10px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.social-links a:hover {
+  background-color: #0d2c1c;
+  transform: translateY(-3px);
+}
+
+.social-links a i {
+  margin-right: 8px;
+}
+
+/* アクセス */
+.access-info {
+  text-align: center;
+  font-size: 1.1em;
+  margin-bottom: 15px;
+}
+
+.map-container {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.map-container iframe {
+  width: 100%;
+  max-width: 800px;
+  height: 450px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* お問い合わせ */
+.contact-info {
+  text-align: center;
+  font-size: 1.1em;
+  margin-top: 30px;
+}
+
+.phone-number {
+  font-size: 2.2em;
+  font-weight: 700;
+  color: #1a4d2e;
+  margin: 20px 0;
+}
+
+.phone-number a {
+  color: #1a4d2e;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.phone-number a:hover {
+  color: #ffd700;
+}
+
+/* フッター */
+footer {
+  background-color: #1a4d2e;
+  color: #fff;
+  text-align: center;
+  padding: 30px 0;
+  margin-top: 50px;
+  font-size: 0.9em;
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+  header .header-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  header h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+  }
+
+  header nav ul li {
+    margin: 0 15px;
+  }
+
+  .hero-slider {
+    height: 400px;
+  }
+
+  .hero-text h2 {
+    font-size: 2.5em;
+  }
+
+  .hero-text p {
+    font-size: 1.2em;
+  }
+
+  h2 {
+    font-size: 2em;
+    margin-bottom: 40px;
+  }
+
+  .section-padding {
+    padding: 60px 0;
+  }
+
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .master-profile {
+    padding: 30px;
+  }
+
+  .master-image {
+    width: 180px;
+    height: 180px;
+    margin-bottom: 20px;
+  }
+
+  .master-info h3 {
+    font-size: 1.6em;
+  }
+
+  .social-links a {
+    padding: 10px 20px;
+    font-size: 1em;
+    margin: 5px;
+  }
+
+  .phone-number {
+    font-size: 1.8em;
+  }
+
+  .map-container iframe {
+    height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.8em;
+  }
+
+  header nav ul li {
+    margin: 0 8px;
+  }
+
+  .hero-slider {
+    height: 300px;
+  }
+
+  .hero-text h2 {
+    font-size: 2em;
+  }
+
+  .hero-text p {
+    font-size: 1em;
+  }
+
+  h2 {
+    font-size: 1.8em;
+    margin-bottom: 30px;
+  }
+
+  .section-padding {
+    padding: 40px 0;
+  }
+
+  .menu-item {
+    padding: 20px;
+  }
+
+  .menu-item h3 {
+    font-size: 1.5em;
+  }
+
+  .master-profile {
+    padding: 20px;
+  }
+
+  .master-image {
+    width: 150px;
+    height: 150px;
+  }
+
+  .master-info h3 {
+    font-size: 1.4em;
+  }
+
+  .social-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .social-links a {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .phone-number {
+    font-size: 1.5em;
+  }
+}
