@@ -6,7 +6,7 @@
 }
 
 body {
-  font-family: 'Noto Serif JP', serif, 'Shippori Mincho', serif, sans-serif;
+  font-family: "Noto Serif JP", serif, "Shippori Mincho", serif, sans-serif;
   line-height: 1.6;
   color: #333;
   background-color: #f8f8f8;
@@ -39,7 +39,7 @@ header {
 }
 
 header h1 {
-  font-family: 'Shippori Mincho', serif;
+  font-family: "Shippori Mincho", serif;
   font-size: 2.5em;
   margin: 0;
   letter-spacing: 2px;
@@ -63,7 +63,7 @@ header nav ul li a {
 }
 
 header nav ul li a::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
@@ -105,7 +105,7 @@ header nav ul li a:hover::after {
 .swiper-slide-next::after,
 .swiper-slide-prev::after {
   z-index: 10;
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -184,8 +184,8 @@ body:not(.loaded) .hero-text {
 }
 
 .hero-text h2 {
-  font-family: 'Shippori Mincho', serif;
-  font-size: 3.5em;
+  font-family: "Shippori Mincho", serif;
+  font-size: 2em;
   margin-bottom: 10px;
   letter-spacing: 3px;
 }
@@ -216,7 +216,7 @@ body:not(.loaded) .hero-text {
 }
 
 h2 {
-  font-family: 'Shippori Mincho', serif;
+  font-family: "Shippori Mincho", serif;
   font-size: 2.8em;
   color: #1a4d2e; /* 深い緑色 */
   text-align: center;
@@ -226,7 +226,7 @@ h2 {
 }
 
 h2::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -272,7 +272,7 @@ h2::after {
 }
 
 .menu-item h3 {
-  font-family: 'Shippori Mincho', serif;
+  font-family: "Shippori Mincho", serif;
   font-size: 1.8em;
   color: #1a4d2e;
   margin-bottom: 15px;
@@ -317,7 +317,7 @@ h2::after {
 }
 
 .master-info h3 {
-  font-family: 'Shippori Mincho', serif;
+  font-family: "Shippori Mincho", serif;
   font-size: 2em;
   color: #1a4d2e;
   margin-bottom: 15px;
